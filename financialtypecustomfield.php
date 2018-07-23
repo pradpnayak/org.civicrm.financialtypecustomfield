@@ -85,6 +85,20 @@ function financialtypecustomfield_civicrm_upgrade($op, CRM_Queue_Queue $queue = 
  */
 function financialtypecustomfield_civicrm_managed(&$entities) {
   _financialtypecustomfield_civix_civicrm_managed($entities);
+  $entities[] = [
+    'module' => 'org.civicrm.financialtypecustomfield',
+    'name' => 'financialtypecustomfield',
+    'update' => 'never',
+    'entity' => 'OptionValue',
+    'params' => [
+      'label' => ts('Financial Type'),
+      'name' => 'civicrm_financial_type',
+      'value' => 'FinancialType',
+      'option_group_id' => 'cg_extend_objects',
+      'is_active' => 1,
+      'version' => 3,
+    ],
+  ];
 }
 
 /**
