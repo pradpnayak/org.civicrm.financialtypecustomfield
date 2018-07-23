@@ -147,3 +147,21 @@ function financialtypecustomfield_civicrm_alterSettingsFolders(&$metaDataFolders
 function financialtypecustomfield_civicrm_entityTypes(&$entityTypes) {
   _financialtypecustomfield_civix_civicrm_entityTypes($entityTypes);
 }
+
+/**
+ * Implements hook_civicrm_links().
+ *
+ * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_links
+ */
+function financialtypecustomfield_civicrm_links($op, $objectName, $objectId, &$links, &$mask, &$values) {
+  if ($objectName == 'FinancialType' && $op == 'financialType.manage.action') {
+    $viewlinks = [
+      CRM_Core_Action::VIEW => [
+      'name' => ts('View'),
+      'url' => 'civicrm/admin/financial/financialType/view',
+      'qs' => 'reset=1&action=view&id=%%id%%',
+      'title' => ts('View'),
+    ]];
+    $links = array_merge($viewlinks, $links);
+  }
+}

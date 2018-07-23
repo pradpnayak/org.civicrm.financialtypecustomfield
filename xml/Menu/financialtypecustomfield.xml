@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<menu>
+  <item>
+    <path>civicrm/admin/financial/financialType/view</path>
+    <page_callback>CRM_Financial_Page_ViewFinancialType</page_callback>
+    <adminGroup>CiviContribute</adminGroup>
+  </item>
+</menu>
