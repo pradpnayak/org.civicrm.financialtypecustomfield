@@ -2,6 +2,7 @@
 <menu>
   <item>
     <path>civicrm/admin/financial/financialType/view</path>
+    <title>View Financial type</title>
     <page_callback>CRM_Financial_Page_ViewFinancialType</page_callback>
     <adminGroup>CiviContribute</adminGroup>
   </item>
